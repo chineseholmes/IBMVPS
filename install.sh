@@ -27,7 +27,7 @@ cd v2ray1
 chmod 777 *
 cd ..
 rm -rf v2ray-linux-64.zip
-mv $HOME/cloudfoundry/v2ray1/v2ray $HOME/cloudfoundry/v2ray
+mv $HOME/cloudfoundry/v2ray1/v2ray $HOME/cloudfoundry/aloux2
 mv $HOME/cloudfoundry/v2ray1/v2ctl $HOME/cloudfoundry/v2ctl
 rm -rf $HOME/cloudfoundry/v2ray1
 uuid=`cat /proc/sys/kernel/random/uuid`
@@ -36,7 +36,7 @@ path=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
 echo '{"inbounds":[{"port":8080,"protocol":"vmess","settings":{"clients":[{"id":"'$uuid'","alterId":64}]},"streamSettings":{"network":"ws","wsSettings":{"path":"/'$path'"}}}],"outbounds":[{"protocol":"freedom","settings":{}}]}'>$HOME/cloudfoundry/config.json
 echo 'applications:'>>manifest.yml
 echo '- path: .'>>manifest.yml
-echo '  command: '/app/htdocs/v2ray'' >>manifest.yml
+echo '  command: '/app/htdocs/aloux2'' >>manifest.yml
 echo '  name: '$appname''>>manifest.yml
 echo '  random-route: true'>>manifest.yml
 echo '  memory: '$ramsize'M'>>manifest.yml
